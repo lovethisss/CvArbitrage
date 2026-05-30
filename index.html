@@ -27,171 +27,105 @@
   }
   body::before {
     content: '';
-    position: fixed;
-    inset: 0;
+    position: fixed; inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 1000;
-    opacity: 0.3;
+    pointer-events: none; z-index: 1000; opacity: 0.3;
   }
 
-  /* NAV */
   nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     padding: 1.25rem 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; justify-content: space-between; align-items: center;
     border-bottom: 1px solid rgba(255,255,255,0.05);
     backdrop-filter: blur(20px);
     background: rgba(10,10,10,0.7);
   }
   .nav-logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 1.1rem;
-    letter-spacing: 0.05em;
-    color: var(--accent);
-    text-decoration: none;
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 1.1rem; letter-spacing: 0.05em;
+    color: var(--accent); text-decoration: none;
   }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    transition: color 0.2s;
+    color: var(--muted); text-decoration: none;
+    font-size: 0.85rem; letter-spacing: 0.08em;
+    text-transform: uppercase; transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--white); }
 
   /* HERO */
   .hero {
     min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    padding-top: 80px;
-    position: relative;
-    overflow: hidden;
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding-top: 80px; position: relative; overflow: hidden;
   }
   .hero-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: flex; flex-direction: column; justify-content: center;
     padding: 5rem 3rem 5rem 5rem;
-    position: relative;
-    z-index: 2;
+    position: relative; z-index: 2;
   }
   .hero-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent);
-    border: 1px solid rgba(200,241,53,0.3);
-    padding: 0.4rem 0.9rem;
-    border-radius: 100px;
-    margin-bottom: 2rem;
-    width: fit-content;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent); border: 1px solid rgba(200,241,53,0.3);
+    padding: 0.4rem 0.9rem; border-radius: 100px;
+    margin-bottom: 2rem; width: fit-content;
   }
   .hero-tag::before {
-    content: '';
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    animation: pulse 2s infinite;
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent); animation: pulse 2s infinite;
   }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
   .hero h1 {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
+    font-family: 'Syne', sans-serif; font-weight: 800;
     font-size: clamp(3rem, 5vw, 5.5rem);
-    line-height: 1;
-    letter-spacing: -0.03em;
-    color: var(--white);
-    margin-bottom: 0.5rem;
+    line-height: 1; letter-spacing: -0.03em;
+    color: var(--white); margin-bottom: 0.5rem;
   }
   .hero h1 span { color: var(--accent); display: block; }
   .hero-sub {
-    font-size: 1.1rem;
-    color: var(--muted);
-    margin: 1.5rem 0 2.5rem;
-    max-width: 420px;
-    line-height: 1.7;
+    font-size: 1.05rem; color: var(--muted);
+    margin: 1.5rem 0 2.5rem; max-width: 420px; line-height: 1.75;
   }
   .hero-stats { display: flex; gap: 2.5rem; margin-bottom: 3rem; }
   .stat { display: flex; flex-direction: column; }
   .stat-num {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 1.8rem;
-    color: var(--white);
-    line-height: 1;
+    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-size: 1.8rem; color: var(--white); line-height: 1;
   }
   .stat-label {
-    font-size: 0.75rem;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-top: 0.3rem;
+    font-size: 0.75rem; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.3rem;
   }
   .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
   .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: var(--accent);
-    color: var(--black);
-    padding: 0.85rem 2rem;
-    border-radius: 100px;
-    font-weight: 500;
-    font-size: 0.9rem;
-    text-decoration: none;
-    transition: transform 0.2s, box-shadow 0.2s;
-    letter-spacing: 0.02em;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--accent); color: var(--black);
+    padding: 0.85rem 2rem; border-radius: 100px;
+    font-weight: 500; font-size: 0.9rem; text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s; letter-spacing: 0.02em;
   }
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(200,241,53,0.3);
-  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(200,241,53,0.3); }
   .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    border: 1px solid rgba(255,255,255,0.15);
-    color: var(--text);
-    padding: 0.85rem 2rem;
-    border-radius: 100px;
-    font-weight: 400;
-    font-size: 0.9rem;
-    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    border: 1px solid rgba(255,255,255,0.15); color: var(--text);
+    padding: 0.85rem 2rem; border-radius: 100px;
+    font-weight: 400; font-size: 0.9rem; text-decoration: none;
     transition: border-color 0.2s, background 0.2s;
   }
-  .btn-secondary:hover {
-    border-color: rgba(255,255,255,0.4);
-    background: rgba(255,255,255,0.04);
-  }
+  .btn-secondary:hover { border-color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.04); }
   .hero-right { position: relative; overflow: hidden; }
   .hero-img {
     width: 100%; height: 100%;
-    object-fit: cover; object-position: center;
-    filter: grayscale(20%) brightness(0.65);
+    object-fit: cover; object-position: center top;
+    filter: grayscale(15%) brightness(0.6);
   }
   .hero-img-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to right, var(--black) 0%, transparent 30%, transparent 70%, var(--black) 100%);
+    background: linear-gradient(to right, var(--black) 0%, transparent 35%, transparent 65%, var(--black) 100%);
   }
   .hero-img-overlay2 {
-    position: absolute; bottom: 0; left: 0; right: 0;
-    height: 200px;
+    position: absolute; bottom: 0; left: 0; right: 0; height: 220px;
     background: linear-gradient(to top, var(--black), transparent);
   }
 
@@ -199,32 +133,26 @@
   .ticker {
     border-top: 1px solid rgba(255,255,255,0.08);
     border-bottom: 1px solid rgba(255,255,255,0.08);
-    padding: 1rem 0; overflow: hidden;
-    background: var(--gray);
+    padding: 1rem 0; overflow: hidden; background: var(--gray);
   }
   .ticker-track {
     display: flex; gap: 3rem;
-    animation: ticker 22s linear infinite;
-    width: max-content;
+    animation: ticker 22s linear infinite; width: max-content;
   }
   .ticker-track span {
-    font-family: 'Syne', sans-serif;
-    font-size: 0.8rem; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--muted);
-    white-space: nowrap; display: flex; align-items: center; gap: 1.5rem;
+    font-family: 'Syne', sans-serif; font-size: 0.8rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--muted); white-space: nowrap;
+    display: flex; align-items: center; gap: 1.5rem;
   }
   .ticker-track span::after { content: '•'; color: var(--accent); }
-  @keyframes ticker {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
+  @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
   /* SECTIONS */
   section { padding: 7rem 5rem; position: relative; }
   .section-label {
-    font-size: 0.7rem; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--accent);
-    margin-bottom: 1rem;
+    font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1rem;
     display: flex; align-items: center; gap: 0.8rem;
   }
   .section-label::before {
@@ -232,8 +160,7 @@
     background: var(--accent); display: inline-block;
   }
   .section-title {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
+    font-family: 'Syne', sans-serif; font-weight: 700;
     font-size: clamp(2rem, 3.5vw, 3.2rem);
     line-height: 1.1; color: var(--white);
     letter-spacing: -0.02em; margin-bottom: 1rem;
@@ -247,21 +174,19 @@
   }
   .journey-img-wrap { position: relative; border-radius: 16px; overflow: hidden; }
   .journey-img {
-    width: 100%; aspect-ratio: 4/5;
-    object-fit: cover;
-    filter: brightness(0.7) saturate(0.75);
+    width: 100%; aspect-ratio: 4/5; object-fit: cover;
+    filter: brightness(0.65) saturate(0.8);
   }
   .journey-img-badge {
     position: absolute; bottom: 1.5rem; left: 1.5rem;
-    background: rgba(10,10,10,0.85);
+    background: rgba(10,10,10,0.88);
     border: 1px solid rgba(200,241,53,0.4);
     border-radius: 12px; padding: 1rem 1.25rem;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
   }
   .journey-img-badge .big {
-    font-family: 'Syne', sans-serif;
-    font-size: 2rem; font-weight: 800;
-    color: var(--accent); line-height: 1;
+    font-family: 'Syne', sans-serif; font-size: 2rem;
+    font-weight: 800; color: var(--accent); line-height: 1;
   }
   .journey-img-badge .small {
     font-size: 0.75rem; color: var(--muted);
@@ -272,41 +197,34 @@
   .timeline { display: flex; flex-direction: column; }
   .timeline-item {
     display: grid; grid-template-columns: 48px 1fr;
-    gap: 1rem; padding-bottom: 2.5rem; position: relative;
+    gap: 1rem; padding-bottom: 2.5rem;
   }
   .timeline-item:last-child { padding-bottom: 0; }
   .timeline-left { display: flex; flex-direction: column; align-items: center; }
   .timeline-dot {
     width: 14px; height: 14px; border-radius: 50%;
     border: 2px solid var(--accent); background: var(--black);
-    flex-shrink: 0; margin-top: 4px; position: relative; z-index: 1;
+    flex-shrink: 0; margin-top: 4px; z-index: 1;
     transition: background 0.2s;
   }
   .timeline-item:hover .timeline-dot { background: var(--accent); }
-  .timeline-line {
-    width: 1px; flex: 1;
-    background: rgba(200,241,53,0.15); margin-top: 4px;
-  }
+  .timeline-line { width: 1px; flex: 1; background: rgba(200,241,53,0.15); margin-top: 4px; }
   .timeline-item:last-child .timeline-line { display: none; }
   .timeline-tag {
     font-size: 0.7rem; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--accent); margin-bottom: 0.3rem;
   }
   .timeline-title {
-    font-family: 'Syne', sans-serif;
-    font-weight: 600; font-size: 1rem;
-    color: var(--white); margin-bottom: 0.4rem;
+    font-family: 'Syne', sans-serif; font-weight: 600;
+    font-size: 1rem; color: var(--white); margin-bottom: 0.4rem;
   }
   .timeline-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
   .timeline-kpi {
-    display: inline-flex; margin-top: 0.6rem;
-    font-size: 0.75rem;
+    display: inline-flex; margin-top: 0.6rem; font-size: 0.75rem;
     background: rgba(200,241,53,0.08);
     border: 1px solid rgba(200,241,53,0.2);
     color: var(--accent); padding: 0.25rem 0.75rem; border-radius: 100px;
   }
-
-  /* AFFILIATE BULLETS */
   .aff-list { margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.5rem; }
   .aff-item {
     display: flex; align-items: flex-start; gap: 0.6rem;
@@ -326,38 +244,25 @@
   }
   .skills-grid {
     display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 1.5px;
-    background: rgba(255,255,255,0.06);
+    gap: 1.5px; background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.06);
     border-radius: 16px; overflow: hidden;
   }
-  .skill-card {
-    background: var(--black); padding: 2rem;
-    transition: background 0.2s;
-  }
+  .skill-card { background: var(--black); padding: 2rem; transition: background 0.2s; }
   .skill-card:hover { background: var(--gray2); }
   .skill-icon { font-size: 1.5rem; margin-bottom: 1rem; display: block; }
   .skill-name {
-    font-family: 'Syne', sans-serif;
-    font-weight: 600; font-size: 0.95rem;
-    color: var(--white); margin-bottom: 0.5rem;
+    font-family: 'Syne', sans-serif; font-weight: 600;
+    font-size: 0.95rem; color: var(--white); margin-bottom: 0.5rem;
   }
   .skill-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
-  .skill-tools {
-    margin-top: 0.75rem;
-    display: flex; flex-wrap: wrap; gap: 0.4rem;
-  }
+  .skill-tools { margin-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .skill-tool {
     font-size: 0.7rem; padding: 0.2rem 0.6rem;
-    border: 1px solid rgba(200,241,53,0.2);
-    border-radius: 100px; color: var(--accent);
-    background: rgba(200,241,53,0.05);
+    border: 1px solid rgba(200,241,53,0.2); border-radius: 100px;
+    color: var(--accent); background: rgba(200,241,53,0.05);
   }
-  .skill-level {
-    margin-top: 1rem; height: 2px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 100px; overflow: hidden;
-  }
+  .skill-level { margin-top: 1rem; height: 2px; background: rgba(255,255,255,0.08); border-radius: 100px; overflow: hidden; }
   .skill-level-fill { height: 100%; background: var(--accent); border-radius: 100px; }
 
   /* VISION */
@@ -369,7 +274,7 @@
   .vision-img-wrap { border-radius: 16px; overflow: hidden; position: relative; }
   .vision-img {
     width: 100%; aspect-ratio: 1; object-fit: cover;
-    filter: brightness(0.6) saturate(0.65) hue-rotate(10deg);
+    filter: brightness(0.55) saturate(0.7);
   }
   .vision-img-wrap::after {
     content: ''; position: absolute; inset: 0;
@@ -412,22 +317,19 @@
   .about-text { font-size: 0.9rem; color: var(--muted); line-height: 1.8; margin-bottom: 2rem; }
   .traits { display: flex; flex-wrap: wrap; gap: 0.6rem; }
   .trait {
-    font-size: 0.78rem; letter-spacing: 0.06em;
-    text-transform: uppercase;
+    font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
     border: 1px solid rgba(255,255,255,0.12);
     color: var(--text); padding: 0.4rem 1rem; border-radius: 100px;
   }
   .about-img-grid {
     display: grid; grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 1rem; height: 500px;
+    grid-template-rows: 1fr 1fr; gap: 1rem; height: 500px;
   }
   .about-img-main { grid-row: 1 / 3; border-radius: 12px; overflow: hidden; }
   .about-img-sm { border-radius: 12px; overflow: hidden; }
   .about-img-main img, .about-img-sm img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    filter: brightness(0.65) saturate(0.7);
+    width: 100%; height: 100%; object-fit: cover;
+    filter: brightness(0.65) saturate(0.75);
   }
 
   /* CTA */
@@ -467,20 +369,17 @@
   }
   .btn-dark:hover { transform: translateY(-2px); box-shadow: 0 10px 35px rgba(0,0,0,0.3); }
 
-  /* FOOTER */
   footer {
     background: var(--black);
     border-top: 1px solid rgba(255,255,255,0.06);
     padding: 2rem 5rem;
-    display: flex; justify-content: space-between; align-items: center;
+    display: flex; justify-content: center; align-items: center;
   }
   .footer-copy { font-size: 0.78rem; color: var(--muted); }
 
-  /* ANIMATIONS */
   .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-  /* RESPONSIVE */
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
@@ -493,14 +392,13 @@
     .cta-inner { flex-direction: column; gap: 2rem; align-items: flex-start; }
     .cta-right { align-items: flex-start; }
     .cta-section { padding: 4rem 1.5rem; }
-    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    footer { padding: 1.5rem; }
     .about-img-grid { height: 300px; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">ARBITRAGE</a>
   <ul class="nav-links">
@@ -521,20 +419,16 @@
       трафика
     </h1>
     <p class="hero-sub">
-      2 года в индустрии. Путь от Sales Manager через FD, RD, Affiliate Manager — до Media Buyer. Понимаю стек изнутри и готов к реальным задачам.
+      От Sales Manager до Media Buyer — через крипту, раскрутки, аффилейт и фарм. Знаю, как работает каждое звено изнутри.
     </p>
     <div class="hero-stats">
       <div class="stat">
+        <span class="stat-num">19</span>
+        <span class="stat-label">Лет</span>
+      </div>
+      <div class="stat">
         <span class="stat-num">2+</span>
-        <span class="stat-label">Года опыта</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">$2K</span>
-        <span class="stat-label">Касса в день</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">200+</span>
-        <span class="stat-label">Диалогов/день</span>
+        <span class="stat-label">Года в арбитраже</span>
       </div>
     </div>
     <div class="hero-cta">
@@ -545,7 +439,7 @@
   <div class="hero-right">
     <img
       class="hero-img"
-      src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=900&q=80"
+      src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&q=95&fit=crop"
       alt="Trading screens"
     />
     <div class="hero-img-overlay"></div>
@@ -556,54 +450,34 @@
 <!-- TICKER -->
 <div class="ticker">
   <div class="ticker-track">
-    <span>Media Buying</span>
-    <span>Traffic Arbitrage</span>
-    <span>Gambling</span>
-    <span>Nutra</span>
-    <span>Crypto</span>
-    <span>Facebook Ads</span>
-    <span>TikTok Ads</span>
-    <span>Account Farming</span>
-    <span>Cloaking</span>
-    <span>Creatives</span>
-    <span>Affiliate Management</span>
-    <span>СНГ Гео</span>
-    <span>SPY Tools</span>
-    <span>Figma</span>
-    <span>CapCut</span>
-    <span>Media Buying</span>
-    <span>Traffic Arbitrage</span>
-    <span>Gambling</span>
-    <span>Nutra</span>
-    <span>Crypto</span>
-    <span>Facebook Ads</span>
-    <span>TikTok Ads</span>
-    <span>Account Farming</span>
-    <span>Cloaking</span>
-    <span>Creatives</span>
-    <span>Affiliate Management</span>
-    <span>СНГ Гео</span>
-    <span>SPY Tools</span>
-    <span>Figma</span>
-    <span>CapCut</span>
+    <span>Media Buying</span><span>Traffic Arbitrage</span><span>Gambling</span>
+    <span>Nutra</span><span>Crypto</span><span>Facebook Ads</span>
+    <span>TikTok Ads</span><span>Account Farming</span><span>Cloaking</span>
+    <span>Creatives</span><span>Affiliate Management</span><span>СНГ Гео</span>
+    <span>SPY Tools</span><span>Figma</span><span>CapCut</span>
+    <span>Media Buying</span><span>Traffic Arbitrage</span><span>Gambling</span>
+    <span>Nutra</span><span>Crypto</span><span>Facebook Ads</span>
+    <span>TikTok Ads</span><span>Account Farming</span><span>Cloaking</span>
+    <span>Creatives</span><span>Affiliate Management</span><span>СНГ Гео</span>
+    <span>SPY Tools</span><span>Figma</span><span>CapCut</span>
   </div>
 </div>
 
 <!-- JOURNEY -->
 <section class="journey" id="journey">
   <div class="section-label">Мой путь</div>
-  <h2 class="section-title">2 года внутри<br>индустрии</h2>
+  <h2 class="section-title">Как я развивался<br>в арбитраже</h2>
 
   <div class="journey-grid fade-in">
     <div class="journey-img-wrap">
       <img
         class="journey-img"
-        src="https://images.unsplash.com/photo-1642790551116-18e150f248e3?w=700&q=80"
-        alt="Crypto and traffic analytics"
+        src="https://images.unsplash.com/photo-1642790551116-18e150f248e3?w=800&q=95&fit=crop"
+        alt="Crypto trading analytics"
       />
       <div class="journey-img-badge">
         <div class="big">2 года</div>
-        <div class="small">В арбитраже</div>
+        <div class="small">В индустрии</div>
       </div>
     </div>
 
@@ -617,7 +491,7 @@
         <div>
           <div class="timeline-tag">Старт</div>
           <div class="timeline-title">Sales Manager → FD, Крипта / Турция</div>
-          <div class="timeline-desc">Первое погружение в арбитраж: вертикаль Crypto, гео Турция. Жёсткий старт — график 7/0 по 15 часов. Быстро адаптировался и вышел на стабильный результат с первых недель.</div>
+          <div class="timeline-desc">Первое погружение в арбитраж: вертикаль Crypto, гео Турция. Жёсткий старт — график 7/0 по 15 часов. Быстро вошёл в ритм и вышел на стабильные показатели.</div>
           <div class="timeline-kpi">💰 Касса от $1 000/день · 100 диалогов/день</div>
         </div>
       </div>
@@ -630,7 +504,7 @@
         <div>
           <div class="timeline-tag">Рост</div>
           <div class="timeline-title">Sales Manager → RD, Раскрутки / СНГ</div>
-          <div class="timeline-desc">Освоил новую вертикаль с нуля. Тим лид заметил моё упорство и увеличил объёмы — 200+ диалогов в день, стабильная касса от $2 000/день.</div>
+          <div class="timeline-desc">Перешёл на позицию RD, раскрутки по гео СНГ. Тим лид заметил упорство и увеличил объёмы. Стабильно держал кассу при высокой нагрузке.</div>
           <div class="timeline-kpi">📈 200+ диалогов/день · $2 000+/день</div>
         </div>
       </div>
@@ -641,14 +515,14 @@
           <div class="timeline-line"></div>
         </div>
         <div>
-          <div class="timeline-tag">Новое направление</div>
+          <div class="timeline-tag">Новая роль</div>
           <div class="timeline-title">Affiliate Manager</div>
-          <div class="timeline-desc">Перешёл в управление партнёрской сетью. Параллельно работал на Ютубера в нише арбитража (NDA).</div>
+          <div class="timeline-desc">Перешёл в управление партнёрской сетью. Параллельно работал с Ютубером в нише арбитража (NDA).</div>
           <div class="aff-list">
             <div class="aff-item"><span><strong>Поиск и привлечение:</strong> Прямая работа с топ-баерами и профессиональными вебмастерами</span></div>
             <div class="aff-item"><span><strong>Построение базы:</strong> Формирование надёжной контактной базы — 10+ активных партнёров</span></div>
             <div class="aff-item"><span><strong>Коммуникация и ретеншн:</strong> Долгосрочные отношения, регулярный фидбек по офферам, решение спорных ситуаций</span></div>
-            <div class="aff-item"><span><strong>Работа с креативами и связками:</strong> Анализ материалов, совместный поиск связок, отслеживание ключевых метрик</span></div>
+            <div class="aff-item"><span><strong>Крео и связки:</strong> Анализ материалов, совместный поиск связок, отслеживание ключевых метрик</span></div>
           </div>
         </div>
       </div>
@@ -660,9 +534,12 @@
         </div>
         <div>
           <div class="timeline-tag">Технический стэк</div>
-          <div class="timeline-title">Фарм аккаунтов + Крео + UBT</div>
-          <div class="timeline-desc">Фарм аккаунтов для FB и TikTok. Ведение каналов в TikTok и Instagram для конверта трафика на TG-каналы. Знакомство с клоакингом и вёрсткой лендингов.</div>
+          <div class="timeline-title">Фарм аккаунтов + Крео</div>
+          <div class="timeline-desc">Фарм аккаунтов для FB и TikTok. Ведение каналов в TikTok и Instagram для конверта трафика на TG-каналы. Знакомство с клоакингом и вёрсткой лендингов. Работа с антидетект-браузерами для управления мультиаккаунтами.</div>
           <div class="timeline-kpi">⚙️ FB · TikTok · Cloaking · Landing pages</div>
+          <div class="aff-list" style="margin-top:0.6rem">
+            <div class="aff-item"><span><strong>Антидетект:</strong> <a href="https://cloud.dolphin.tech/?type=register&token=c516ac90-f29d-4456-8b1f-1649f33f6fd2" target="_blank" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(200,241,53,0.3)">Dolphin</a> · Octo · <a href="https://app.adspower.com/registration?code=f1jd3s2&source=share" target="_blank" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(200,241,53,0.3)">AdsPower</a></span></div>
+          </div>
         </div>
       </div>
 
@@ -672,8 +549,8 @@
         </div>
         <div>
           <div class="timeline-tag">Сейчас</div>
-          <div class="timeline-title">Целенаправленный путь в Media Buying</div>
-          <div class="timeline-desc">Изучаю вертикали Gambling и Nutra, открыт и к другим направлениям. Ищу команду, где могу расти как баер — готов к тестам, рутине, аналитике.</div>
+          <div class="timeline-title">Путь в Media Buying</div>
+          <div class="timeline-desc">Целенаправленно двигаюсь в баинг. Gambling и Nutra — приоритет, но открыт к другим вертикалям. Готов к тестам, рутине, аналитике — хочу расти через практику.</div>
           <div class="timeline-kpi">🎯 Gambling · Nutra · FB · TT · Open to offers</div>
         </div>
       </div>
@@ -687,14 +564,14 @@
   <div class="section-label">Навыки</div>
   <h2 class="section-title">Что умею</h2>
   <p class="skills-intro">
-    Прошёл несколько ролей в одной индустрии — это даёт понимание арбитража как системы, а не одного звена. Знаю, что происходит до и после каждого этапа.
+    Каждая роль добавляла новый слой: продажи → партнёрка → фарм → крео → аналитика. Сегодня понимаю арбитраж как систему, а не отдельные задачи.
   </p>
 
   <div class="skills-grid fade-in">
     <div class="skill-card">
       <span class="skill-icon">📊</span>
       <div class="skill-name">Sales / FD / RD</div>
-      <div class="skill-desc">Крипта, раскрутки, гео Турция и СНГ. Стабильные показатели при больших объёмах диалогов.</div>
+      <div class="skill-desc">Крипта и раскрутки, гео Турция и СНГ. Стабильные кассы при больших объёмах диалогов.</div>
       <div class="skill-level"><div class="skill-level-fill" style="width: 90%"></div></div>
     </div>
     <div class="skill-card">
@@ -706,13 +583,13 @@
     <div class="skill-card">
       <span class="skill-icon">⚙️</span>
       <div class="skill-name">Фарм аккаунтов</div>
-      <div class="skill-desc">Фарм для Facebook и TikTok. Глубокое понимание требований и процессов платформ.</div>
+      <div class="skill-desc">Фарм для Facebook и TikTok. Понимание требований платформ и процессов прогрева.</div>
       <div class="skill-level"><div class="skill-level-fill" style="width: 80%"></div></div>
     </div>
     <div class="skill-card">
       <span class="skill-icon">🎨</span>
       <div class="skill-name">Создание креативов</div>
-      <div class="skill-desc">Статика и динамика: от концепта до финала. Работа с ИИ-инструментами для генерации визуалов.</div>
+      <div class="skill-desc">Статика и динамика: от концепта до финала. Работа с ИИ-инструментами для генерации и обработки визуалов.</div>
       <div class="skill-tools">
         <span class="skill-tool">Figma</span>
         <span class="skill-tool">CapCut</span>
@@ -723,7 +600,7 @@
     <div class="skill-card">
       <span class="skill-icon">🔍</span>
       <div class="skill-name">Аналитика & SPY</div>
-      <div class="skill-desc">Анализ конкурентных крео, поиск рабочих связок, структурирование данных.</div>
+      <div class="skill-desc">Анализ конкурентных крео, поиск рабочих связок, структурирование и хранение данных.</div>
       <div class="skill-tools">
         <span class="skill-tool">Facebook Library</span>
         <span class="skill-tool">Tayver</span>
@@ -752,8 +629,8 @@
     <div class="vision-img-wrap">
       <img
         class="vision-img"
-        src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=700&q=80"
-        alt="Trading analytics"
+        src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=95&fit=crop"
+        alt="Analytics dashboard"
       />
     </div>
     <div class="vision-points">
@@ -761,28 +638,28 @@
         <div class="vision-num">01</div>
         <div class="vision-text">
           <h4>Стать полноценным Media Buyer</h4>
-          <p>Gambling и Nutra — приоритетные вертикали, но открыт к другим направлениям. Хочу пройти путь от тестов до масштабирования рабочих связок.</p>
+          <p>Gambling и Nutra — приоритет, но открыт к другим вертикалям. Хочу пройти путь от первых тестов до масштабирования рабочих связок.</p>
         </div>
       </div>
       <div class="vision-point">
         <div class="vision-num">02</div>
         <div class="vision-text">
           <h4>FB и TikTok Ads — уже не теория</h4>
-          <p>Алгоритмы, обходы банов, оптимизация кампаний — разбирался на практике через фарм и работу с аккаунтами. Хочу углублять через реальные сливы.</p>
+          <p>Алгоритмы, обходы банов, структура кампаний — разбирался на практике через фарм и работу с аккаунтами. Хочу углублять это через реальные сливы.</p>
         </div>
       </div>
       <div class="vision-point">
         <div class="vision-num">03</div>
         <div class="vision-text">
           <h4>Работать в сильной команде</h4>
-          <p>Готов начинать с задач, которые реально нужны: тесты, рутина, аналитика. Рост через практику, не через пустые слова.</p>
+          <p>Готов начинать с задач, которые реально нужны: тесты, рутина, аналитика. Рост через практику — без пустых слов.</p>
         </div>
       </div>
       <div class="vision-point">
         <div class="vision-num">04</div>
         <div class="vision-text">
           <h4>Понимаю реальность индустрии</h4>
-          <p>Нет иллюзий про «золотую кнопку». Арбитраж — это постоянный поиск, тесты и адаптация. Именно это меня и мотивирует.</p>
+          <p>Нет иллюзий про «золотую кнопку». Арбитраж — это постоянный поиск, тесты и адаптация. Именно это меня и заряжает.</p>
         </div>
       </div>
     </div>
@@ -800,7 +677,7 @@
         «Я понимаю, что это не постоянство — мы вечно будем в поиске того, что работает. И именно это меня заряжает.»
       </div>
       <p class="about-text">
-        19 лет. 2 года в арбитраже трафика — прошёл путь от продажника до аффилейт-менеджера, попутно освоив фарм, создание крео и аналитику. Готов к тестовому заданию, покажу примеры работ.
+        19 лет. 2 года в арбитраже трафика — прошёл путь от продажника до аффилейт-менеджера, параллельно освоив фарм, создание крео и аналитику. Готов к тестовому, покажу примеры работ.
       </p>
       <div class="traits">
         <span class="trait">Пунктуален</span>
@@ -811,16 +688,16 @@
         <span class="trait">Готов к рутине</span>
       </div>
     </div>
-    <div class="about-img-wrap">
+    <div>
       <div class="about-img-grid">
         <div class="about-img-main">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80" alt="Analytics dashboard" />
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=95&fit=crop" alt="Analytics dashboard" />
         </div>
         <div class="about-img-sm">
-          <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=400&q=80" alt="Digital marketing" />
+          <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=500&q=95&fit=crop" alt="Code and analytics" />
         </div>
         <div class="about-img-sm">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80" alt="Traffic analytics" />
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=95&fit=crop" alt="Traffic analytics" />
         </div>
       </div>
     </div>
@@ -832,25 +709,21 @@
   <div class="cta-inner">
     <h2 class="cta-title">Готов к работе.<br>Напиши мне.</h2>
     <div class="cta-right">
-      <p class="cta-text">Открыт к офферам — Gambling, Nutra и другие вертикали. Готов на тестовое, покажу крео и ленды.</p>
+      <p class="cta-text">Gambling, Nutra и другие вертикали — открыт к офферам. Готов на тестовое, покажу крео и ленды.</p>
       <a href="https://t.me/workknw" target="_blank" class="btn-dark">Telegram →</a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-copy">© 2026 — Traffic Arbitrage Specialist</div>
 </footer>
 
 <script>
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
-
 </body>
 </html>
